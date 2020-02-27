@@ -32,11 +32,22 @@
 
         public virtual bool Interact(Unit otherUnit)
         {
+            if (otherUnit is Human)
+            {
+                return true;
+            }
+            if (otherUnit is Unit)
+            {
+                return true;
+            }
             return false;
         }
 
         public virtual bool Interact(Prop prop) => false;
 
+
         public bool Move(Position targetPosition) => false;
+
+        
     }
 }
